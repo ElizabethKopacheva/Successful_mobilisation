@@ -163,8 +163,8 @@ def get_coh_v(id2word, corpus, texts, start, limit, step):
 get_coh_v(id2word1,corpus1,texts1,1,20,1)
 get_coh_v(id2word2,corpus2,texts2,1,20,1)
 ```
-<img src="c_roi.png" width="100%" />
-<img src="c_ch.png" width="100%" />
+<img src="c_roi.png" width="80%" />
+<img src="c_ch.png" width="80%" />
 
 # Topic modeling
 
@@ -371,7 +371,7 @@ cor(roi[,c("tw_retw",
                 "tw_fr")])
 ```
 <div class="figure">
-<img src="cor_roi_tw.png" width="50%" />
+<img src="cor_roi_tw.png" width="80%" />
 </div>
 
 
@@ -386,7 +386,7 @@ cor(ch[,c("tw_retw",
                 "tw_fr")])
 ```
 <div class="figure">
-<img src="cor_ch_twitter.png" width="50%" />
+<img src="cor_ch_twitter.png" width="80%" />
 </div>
 
 
@@ -429,7 +429,7 @@ cor(roi[,c("vk_com",
            "vk_gr")])
 ```
 
-<img src="cor_roi_vk.png" width="50%" />
+<img src="cor_roi_vk.png" width="80%" />
 
 
 ```r
@@ -443,7 +443,7 @@ cor(ch[,c("vk_com",
            "vk_gr")])
 ```
 
-<img src="cor_ch_vk.png" width="50%" />
+<img src="cor_ch_vk.png" width="80%" />
 Once again, many variables are correlated. The dimensionality is reduced as follows. Comments and replies are reduced to the petition-mentioning, while number of friends, followers, groups and, in regard to the ROI petition-mentioning, views comprise the reach of the VK recruiters.
 
 
