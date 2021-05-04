@@ -132,7 +132,7 @@ Elizaveta Kopacheva
                     "tw_fol",
                     "tw_fr")])
 
-![](cor_roi_tw.tiff)<!-- -->
+<img src="cor_roi_tw.png" width="804" />
 
     #In the Change.org dataset
     cor(ch[,c("tw_retw",
@@ -142,7 +142,7 @@ Elizaveta Kopacheva
                     "tw_fol",
                     "tw_fr")])
 
-![](cor_ch_twitter.tiff)<!-- -->
+<img src="cor_ch_twitter.png" width="804" />
 
 All of the variables are highly correlated. In this analysis, however,
 the distinction between the variables should be drawn. Thus, quotes and
@@ -181,7 +181,7 @@ recruiters.
                "vk_fr",
                "vk_gr")])
 
-![](cor_roi_vk.tiff)<!-- -->
+<img src="cor_roi_vk.png" width="804" />
 
     #In the Change.org dataset
     cor(ch[,c("vk_com",
@@ -192,11 +192,11 @@ recruiters.
                "vk_fr",
                "vk_gr")])
 
-![](cor_ch_vk.tiff)<!-- --> Once again, many variables are correlated.
-The dimensionality is reduced as follows. Comments and replies are
-reduced to the petition-mentioning, while number of friends, followers,
-groups and, in regard to the ROI petition-mentioning, views comprise the
-reach of the VK recruiters.
+<img src="cor_ch_vk.png" width="804" /> Once again, many variables are
+correlated. The dimensionality is reduced as follows. Comments and
+replies are reduced to the petition-mentioning, while number of friends,
+followers, groups and, in regard to the ROI petition-mentioning, views
+comprise the reach of the VK recruiters.
 
     roi_vk_com_rep<-fa(as.matrix(roi[,c("vk_com","vk_rep")]),
                      nfactors =1, 
