@@ -371,7 +371,7 @@ cor(roi[,c("tw_retw",
                 "tw_fr")])
 ```
 <div class="figure">
-<img src="cor_roi_tw.png" width="100%" />
+<img src="cor_roi_tw.png" width="50%" />
 </div>
 
 
@@ -386,7 +386,7 @@ cor(ch[,c("tw_retw",
                 "tw_fr")])
 ```
 <div class="figure">
-<img src="cor_ch_twitter.png" width="100%" />
+<img src="cor_ch_twitter.png" width="50%" />
 </div>
 
 
@@ -429,7 +429,7 @@ cor(roi[,c("vk_com",
            "vk_gr")])
 ```
 
-<img src="cor_roi_vk.png" width="804" />
+<img src="cor_roi_vk.png" width="50%" />
 
 
 ```r
@@ -443,7 +443,7 @@ cor(ch[,c("vk_com",
            "vk_gr")])
 ```
 
-<img src="cor_ch_vk.png" width="804" />
+<img src="cor_ch_vk.png" width="50%" />
 Once again, many variables are correlated. The dimensionality is reduced as follows. Comments and replies are reduced to the petition-mentioning, while number of friends, followers, groups and, in regard to the ROI petition-mentioning, views comprise the reach of the VK recruiters.
 
 
