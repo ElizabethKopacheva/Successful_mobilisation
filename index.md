@@ -1257,11 +1257,6 @@ anova(m_ch1.1,m_ch1.2)
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call =
-## lavaan::lavaan(model = mod_ch1.1, : lavaan WARNING: some models have the same
-## degrees of freedom
-```
 
 ```
 ## Chi-Squared Difference Test
@@ -1314,13 +1309,6 @@ anova(m_ch2.1,m_ch2.2)
 #model m_ch1.2 has the best fit
 ```
 
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call = lavaan::lavaan(model = mod_ch1.2, : lavaan WARNING: some restricted models fit better than less 
-## 	 restricted models; either these models are not nested, or
-## 	 the less restricted model failed to reach a global optimum.
-```
-
 ```
 ## Chi-Squared Difference Test
 ## 
@@ -1330,29 +1318,11 @@ anova(m_ch2.1,m_ch2.2)
 ```
 
 ```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call = lavaan::lavaan(model = mod_ch1.2, : lavaan WARNING: some restricted models fit better than less 
-## 	 restricted models; either these models are not nested, or
-## 	 the less restricted model failed to reach a global optimum.
-```
-
-```
 ## Chi-Squared Difference Test
 ## 
 ##         Df   AIC   BIC  Chisq Chisq diff Df diff Pr(>Chisq)
 ## m_ch1.2 58 30254 30501 3895.6                              
 ## m_ch2.2 61 30170 30401 3817.6    -78.014       3          1
-```
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call = lavaan::lavaan(model = mod_ch2.1, : lavaan WARNING: some restricted models fit better than less 
-## 	 restricted models; either these models are not nested, or
-## 	 the less restricted model failed to reach a global optimum.
-```
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call =
-## lavaan::lavaan(model = mod_ch2.1, : lavaan WARNING: some models have the same
-## degrees of freedom
 ```
 
 ```
@@ -1585,13 +1555,6 @@ anova(m_ch6,m_ch9)
 #m_ch6 has the best fit
 ```
 
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call = lavaan::lavaan(model = mod_ch6, : lavaan WARNING: some restricted models fit better than less 
-## 	 restricted models; either these models are not nested, or
-## 	 the less restricted model failed to reach a global optimum.
-```
-
 ```
 ## Chi-Squared Difference Test
 ## 
@@ -1703,10 +1666,10 @@ lavaanPlot(model =m_ch6 , coefs =T,
            node_options = list ( fontsize =16) , stars =" regress ")
 ```
 
-```{=html}
-<div id="htmlwidget-70307dd8ac3074d0df1a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-70307dd8ac3074d0df1a">{"x":{"diagram":" digraph plot { \n graph [ overlap = true, fontsize = 10 ] \n node [ fontsize = 16 ] \n node [shape = box] \n main_topic; tw_like; votes; tw_retw; vk_like; vk_v; vk_fr; vk_gr; tw_fr; tw_fol; vk_com; vk_rep; tw_q; tw_rep \n node [shape = oval] \n vk_reach; tw_reach; vk_com_rep; tw_rep_q \n \n edge [ fontsize = 14, color = grey ] \n main_topic->votes [label = \"-0.01\"] tw_reach->votes [label = \"0.91\"] vk_reach->votes [label = \"-0.06\"] main_topic->tw_retw [label = \"0\"] tw_reach->tw_retw [label = \"0.33\"] main_topic->tw_rep_q [label = \"0\"] tw_reach->tw_rep_q [label = \"0.33\"] tw_like->tw_rep_q [label = \"0.64\"] main_topic->tw_like [label = \"-0.02\"] tw_reach->tw_like [label = \"0.87\"] main_topic->vk_like [label = \"0\"] vk_reach->vk_like [label = \"1.04\"] main_topic->vk_com_rep [label = \"0\"] vk_reach->vk_com_rep [label = \"0.98\"] vk_reach->vk_v [label = \"1\"] vk_reach->vk_fr [label = \"0.91\"] vk_reach->vk_gr [label = \"0.68\"] tw_reach->tw_fr [label = \"1\"] tw_reach->tw_fol [label = \"0.92\"] vk_com_rep->vk_com [label = \"1\"] vk_com_rep->vk_rep [label = \"1.05\"] tw_rep_q->tw_q [label = \"1\"] tw_rep_q->tw_rep [label = \"1\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-```
+<div class="figure">
+<img src="sem_ch.png" width="100%" />
+</div>
+
 The same procedure is repeated for the ROI petition signing.
 
 ```r
@@ -1753,20 +1716,6 @@ m_roi1 <- sem(mod_roi1, data = roi_sem )
 
 anova(m_roi0,m_roi1)
 #model 0 has a better fit
-```
-
-
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call = lavaan::lavaan(model = mod_roi0, : lavaan WARNING: some restricted models fit better than less 
-## 	 restricted models; either these models are not nested, or
-## 	 the less restricted model failed to reach a global optimum.
-```
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call =
-## lavaan::lavaan(model = mod_roi0, : lavaan WARNING: some models have the same
-## degrees of freedom
 ```
 
 ```
@@ -1863,12 +1812,6 @@ anova(m_roi3,m_roi4)
 #m_roi3 has a better fit
 ```
 
-
-```
-## Warning in lavTestLRT(object = new("lavaan", version = "0.6.7", call = lavaan::lavaan(model = mod_roi3, : lavaan WARNING: some restricted models fit better than less 
-## 	 restricted models; either these models are not nested, or
-## 	 the less restricted model failed to reach a global optimum.
-```
 
 ```
 ## Chi-Squared Difference Test
@@ -1980,11 +1923,10 @@ lavaanPlot(model =m_roi5 , coefs =T,
            edge_options =list(fontsize =14,color ="grey"),
            node_options = list ( fontsize =16) , stars =" regress ")
 ```
+<div class="figure">
+<img src="sem_roi.png" width="100%" />
+</div>
 
-```{=html}
-<div id="htmlwidget-0aae348e77476308411c" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0aae348e77476308411c">{"x":{"diagram":" digraph plot { \n graph [ overlap = true, fontsize = 10 ] \n node [ fontsize = 16 ] \n node [shape = box] \n main_topic; tw_like; tw_retw; votes; vk_like; vk_v; vk_fol; vk_fr; vk_gr; tw_fr; tw_fol; vk_com; vk_rep; tw_q; tw_rep \n node [shape = oval] \n vk_reach; tw_reach; vk_com_rep; tw_rep_q \n \n edge [ fontsize = 14, color = grey ] \n main_topic->votes [label = \"0.06\"] tw_reach->votes [label = \"0.3\"] vk_com_rep->votes [label = \"0.39\"] tw_like->tw_rep_q [label = \"1.52\"] tw_retw->tw_rep_q [label = \"-0.59\"] tw_reach->tw_rep_q [label = \"0.07\"] tw_retw->tw_like [label = \"1.12\"] tw_reach->tw_like [label = \"-0.12\"] vk_com_rep->vk_like [label = \"1.36\"] vk_reach->vk_like [label = \"-0.34\"] vk_reach->vk_com_rep [label = \"1.02\"] vk_reach->vk_v [label = \"1\"] vk_reach->vk_fol [label = \"0.79\"] vk_reach->vk_fr [label = \"0.83\"] vk_reach->vk_gr [label = \"0.79\"] tw_reach->tw_fr [label = \"1\"] tw_reach->tw_fol [label = \"0.86\"] vk_com_rep->vk_com [label = \"1\"] vk_com_rep->vk_rep [label = \"1\"] tw_rep_q->tw_q [label = \"1\"] tw_rep_q->tw_rep [label = \"0.98\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-```
 ## Fitting the parameters
 Once the structures are learned, we can fit BN parameters.
 First of all, we need to create empty graphs for both of the networks.
