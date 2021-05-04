@@ -163,8 +163,8 @@ def get_coh_v(id2word, corpus, texts, start, limit, step):
 get_coh_v(id2word1,corpus1,texts1,1,20,1)
 get_coh_v(id2word2,corpus2,texts2,1,20,1)
 ```
-<img src="c_roi.png" width="50%" />
-<img src="c_ch.png" width="50%" />
+<img src="c_roi.png" width="100%" />
+<img src="c_ch.png" width="100%" />
 
 # Topic modeling
 
