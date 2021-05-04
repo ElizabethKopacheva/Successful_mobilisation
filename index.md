@@ -1,14 +1,9 @@
 ---
-title: "Supplementary R script for
-Successful mobilisation strategies: Increasing low-cost participation to engender civil society in hybrid regimes"
-author: "Elizaveta Kopacheva"
-date: "5/3/2021"
+title: Supplementary R script for Successful mobilisation strategies: Increasing low-cost participation to engender civil society in hybrid regimes
 output:
   html_document:
     keep_md: true
 ---
-
-
 
 # Merging the datasets
 
@@ -150,8 +145,10 @@ cor(roi[,c("tw_retw",
                 "tw_fol",
                 "tw_fr")])
 ```
+<div class="figure">
+<img src="cor_roi_tw.png" width="100%" />
+</div>
 
-<img src="cor_roi_tw.png" width="804" />
 
 
 ```r
@@ -163,8 +160,10 @@ cor(ch[,c("tw_retw",
                 "tw_fol",
                 "tw_fr")])
 ```
+<div class="figure">
+<img src="cor_ch_twitter.png" width="100%" />
+</div>
 
-<img src="cor_ch_twitter.png" width="804" />
 
 All of the variables are highly correlated. In this analysis, however, the distinction between the variables should be drawn. Thus, quotes and replies are reduced to one variable, i.e., petition-mentioning, while the number of friends and followers comprise the reach of the Twitter recruiters.
 
