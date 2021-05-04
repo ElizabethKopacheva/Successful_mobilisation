@@ -161,4 +161,72 @@ def get_coh_v(id2word, corpus, texts, start, limit, step):
 #running the function
 get_coh_v(id2word1,corpus1,texts1,1,20,1)
 get_coh_v(id2word2,corpus2,texts2,1,20,1)
-```![c_roi](https://user-images.githubusercontent.com/58335287/117021803-f7d89d00-acf7-11eb-90ec-b1d58bb40944.png)
+```
+<img src="c_roi.png" width="804" />
+<img src="c_ch.png" width="804" />
+
+# Topic modeling
+
+Once we found the correct number of topics to be extracted, we can conduct LdaMallet topic modeling.
+```py
+#defining the function to extract topics
+def get_model_results(corpus,id2word):
+    print('Enter the number of topics')
+    x = int(input())
+    model = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus, num_topics=x, id2word=id2word)
+    
+    # Creating a df of topic words
+    import pandas as pd
+    topics = [[(term, round(wt, 3)) for term, wt in model.show_topic(n, topn=20)] for n in range(0, model.num_topics)]
+    topics_df = pd.DataFrame([[term for term, wt in topic] for topic in topics], columns = ['Term'+str(i) for i in range(1, 21)], index=['Topic '+str(t) for t in range(1, model.num_topics+1)]).T
+    topic_list=[]
+    print("Give a title for the following topic")
+    for item in range(0,x):
+        print(list(topics_df.iloc[:,item]))
+        y=input()
+        topic_list.append(y)
+    topics_df.columns =topic_list
+    # Get the results 
+    tm_results = model[corpus]
+    df_new=pd.DataFrame(tm_results)
+    for item in range(0,x):
+        list1=df_new[item]
+        new_list = list(map(lambda x: x[1], list1))
+        df_new.loc[:,item]=new_list
+    df_new.columns =topic_list
+    df_new['main_topic']=df_new.idxmax(axis=1)
+    
+    return(df_new,topics_df)
+```
+The function allows to specify the number of topic and name categories one by one.
+```py 
+result_df1,top1=get_model_results(corpus1,id2word1)#the specified number of topics is 5
+result_df2,top2=get_model_results(corpus2,id2word2)#the specified number of topics is 9
+```
+Now, we can attach the main topic column to the datasets and save the dfs.
+```py 
+df_roi['main_topic']=result_df1['main_topic']
+df_ch['main_topic']=result_df2['main_topic']
+
+df_roi.to_csv('df_roi.csv',encoding='utf-8-sig')
+df_ch.to_csv('df_ch.csv',encoding='utf-8-sig')
+```
+We can also check if some words are missing in the ROI documents.
+```py
+all_words1=texts1
+all_words2=texts2
+all_words_list1 = [item for item2 in all_words1 for item in item2]
+all_words_list2 = [item for item2 in all_words2 for item in item2]
+
+diff_words=np.setdiff1d(all_words_list2,all_words_list1).tolist()
+word_in_doc=[]
+for i in diff_words:
+    n_doc=0
+    for j in all_words2:
+        if i in j:
+            n_doc+=1
+    word_in_doc.append(n_doc)
+d = {'Word':diff_words,'In N documents':word_in_doc}
+wk= pd.DataFrame(d)
+wk=wk.sort_values(by=['In N documents'], ascending=False)
+```
