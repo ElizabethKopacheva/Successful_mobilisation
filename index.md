@@ -5,6 +5,8 @@ output:
     keep_md: true
 ---
 
+The first step of the analysis is to extract topics of the e-petition. Please, find the Supplementary Python script of this step of the analysis here: https://github.com/ElizabethKopacheva/Successful_mobilisation/blob/master/index2.md
+
 # Merging the datasets
 
 
