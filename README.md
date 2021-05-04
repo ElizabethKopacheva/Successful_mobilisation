@@ -1,5 +1,5 @@
 ---
-title: "Supplementary R script for Successful mobilisation strategies: Increasing low-cost participation to engender civil society in hybrid regimes"
+title: "Supplementary R script for //Successful mobilisation strategies: Increasing low-cost participation to engender civil society in hybrid regimes"
 author: "Elizaveta Kopacheva"
 date: "5/3/2021"
 output:
