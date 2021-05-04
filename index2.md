@@ -8,7 +8,7 @@ This Python script shows how the topic of e-petitions were extracted. Before app
 # Text cleaning
 
 ```py
-# defying the functions
+# defining the functions
 import re
 import string
 import numpy as np
@@ -95,3 +95,70 @@ res1,id2word1,texts1,corpus1=create_list_of_words(df_roi.Text)
 df_ch=pd.read_json('ch_data.json')
 res2,id2word2,texts2,corpus2=create_list_of_words(df_ch.Text)
 ```
+# Choosing the correct number of topics
+
+To choose the correct number of topics, we need to calculate the coherance values.
+```py
+# defining the function
+import gensim
+from gensim.models import CoherenceModel
+import os
+from gensim.models.wrappers import LdaMallet
+import time
+import os
+os.environ.update({'MALLET_HOME':r'C:/mallet-2.0.8/'})
+mallet_path = r'C:/mallet-2.0.8/bin/mallet.bat'
+
+#looking for the number of topics
+def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=3):
+    """
+    Compute c_v coherence for various number of topics
+
+    Parameters:
+    ----------
+    dictionary : Gensim dictionary
+    corpus : Gensim corpus
+    texts : List of input texts
+    limit : Max num of topics
+
+    Returns:
+    -------
+    model_list : List of LDA topic models
+    coherence_values : Coherence values corresponding to the LDA model with respective number of topics
+    """
+    coherence_values = []
+    
+    for num_topics in range(start, limit, step):
+        print(num_topics)
+        start=time.time()
+        model = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus, num_topics=num_topics, id2word=id2word)
+        coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence='c_v')
+        end=time.time()
+        coherence_values.append(coherencemodel.get_coherence())
+
+    return coherence_values
+
+#defining the function to build the graph of the coherence values
+import matplotlib.pyplot as plt
+
+def get_coh_v(id2word, corpus, texts, start, limit, step):
+    # Getting the coherence numbers 
+    
+    #running the function
+    coherence_value = compute_coherence_values(dictionary=id2word, corpus=corpus, texts=texts, start=start, limit=limit, step=step)
+   
+    
+    # building the graph 
+    x = range(start, limit, step)
+    plt.plot(x, coherence_value)
+    plt.xlabel("Num Topics")
+    plt.ylabel("Coherence score")
+    plt.legend(("coherence_values"), loc='best')
+    
+    plt.show()
+```
+```py
+#running the function
+get_coh_v(id2word1,corpus1,texts1,1,20,1)
+get_coh_v(id2word2,corpus2,texts2,1,20,1)
+```![c_roi](https://user-images.githubusercontent.com/58335287/117021803-f7d89d00-acf7-11eb-90ec-b1d58bb40944.png)
