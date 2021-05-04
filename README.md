@@ -192,7 +192,9 @@ recruiters.
                "vk_fr",
                "vk_gr")])
 
-<img src="cor_ch_vk.png" width="804" /> Once again, many variables are
+<img src="cor_ch_vk.png" width="804" /> 
+
+Once again, many variables are
 correlated. The dimensionality is reduced as follows. Comments and
 replies are reduced to the petition-mentioning, while number of friends,
 followers, groups and, in regard to the ROI petition-mentioning, views
@@ -1566,8 +1568,9 @@ is model 6. It can be visualised as follows.
                edge_options =list(fontsize =14,color ="grey"),
                node_options = list ( fontsize =16) , stars =" regress ")
 
-![](R_mark_files/figure-gfm/unnamed-chunk-47-1.png)<!-- --> The same
-procedure is repeated for the ROI petition signing.
+![](R_mark_files/figure-gfm/unnamed-chunk-47-1.png)<!-- --> 
+
+The same procedure is repeated for the ROI petition signing.
 
     #SEM significance-of-the-paths testing in regard to participation
     #in the ROI petition signing
@@ -1796,8 +1799,11 @@ procedure is repeated for the ROI petition signing.
                edge_options =list(fontsize =14,color ="grey"),
                node_options = list ( fontsize =16) , stars =" regress ")
 
-![](R_mark_files/figure-gfm/unnamed-chunk-62-1.png)<!-- --> \#\# Fitting
-the parameters Once the structures are learned, we can fit BN
+![](R_mark_files/figure-gfm/unnamed-chunk-62-1.png)<!-- --> 
+
+## Fitting the parameters 
+
+Once the structures are learned, we can fit BN
 parameters. First of all, we need to create empty graphs for both of the
 networks.
 
